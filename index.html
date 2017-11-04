@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman-Game</title>
+	<link rel="stylesheet" type="text/css" href="Assets/CSS/reset.css">
+	<link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
+
+</head>
+
+<body>
+	
+	<H1>Press any key to get started.</H1>
+
+	<script type="text/javascript">
+	
+	var bands70s = ["Bee Gees", "Chic", "Queen", "Steve Miller", "Eagles"];
+	var randIndexes
+	var randLowerCase
+	var correctGuess = 0;
+	var incorrectGuess = 0;
+	var counter
+	var i
+	var userGuesses = [];
+
+	document.onkeyup = function () {
+		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+		console.log(userGuess);
+		//rand.indexOf([userGuess, fromIndex]);
+		//console.log(fromIndex);
+		//Randomly select a band from the provided array.
+		var rand = bands70s[Math.floor(Math.random() * bands70s.length)];
+		// Calculate the number of guesses allowed.
+		var guessAllowed = rand.length + 8;
+		//Wirte the number of guesses allowed which is the length of the randomly selected string plus 8 characters.
+		document.write("You are allowed " + guessAllowed + " guesses. ");
+		//Computer randomly select a band name.
+		console.log(rand);
+		//Determine the length of the selected band name and print an underscore for each chracter.
+		for (var j = 0; j < rand.length; j++) 
+			{
+	 		document.write("_", " ");
+			}
+		
+		var randLowerCase = rand;	
+				
+			document.write(userGuess);
+
+
+		//for (var i = 0; i < randLowerCase.length; i++) {
+		
+		var matchGuess 
+
+		matchGuess = randLowerCase.indexOf(userGuess);
+					
+			console.log(matchGuess);
+		
+		if (matchGuess !== -1) 
+			{
+			correctGuess++;
+			
+			}
+		else 
+			{
+			incorrectGuess++;
+			
+			}
+		userGuesses.push(userGuess);
+		console.log(correctGuess);
+		console.log(incorrectGuess);
+		console.log(userGuesses);
+		
+		}
+
+
+</script>
+
+</body>
+</html>
